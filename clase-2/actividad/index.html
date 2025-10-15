@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicios DOM</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h2>Ejercicio 1: Relaciones DOM</h2>
+    <div id="contenedor-padre">
+        <p id="p-uno">Párrafo 1: Primer hijo.</p>
+        <p id="p-dos">Párrafo 2: El seleccionado.</p>
+        <p id="p-tres">Párrafo 3: Último hijo.</p>
+    </div>
+    
+    <hr>
+    
+    <h2>Ejercicio 2: Creación Dinámica</h2>
+    <button id="btn-agregar">Agregar Elemento</button>
+    <div id="contenedor-dinamico">
+        </div>
+
+    <hr>
+    
+    <h2>Ejercicio 3: innerText vs innerHTML</h2>
+    <button id="btn-text">Usar innerText</button>
+    <button id="btn-html">Usar innerHTML</button>
+    <div id="contenido-a-modificar">
+        Texto inicial, ¡listo para ser cambiado!
+    </div>
+    
+    <hr>
+    
+    <h2>Ejercicio 4: Template Strings</h2>
+    <input type="text" id="input-nombre" placeholder="Ingresa tu nombre">
+    <button id="btn-mensaje">Mostrar Mensaje</button>
+    <p id="mensaje-salida"></p>
+    
+    <hr>
+    
+    <h2>Ejercicio 5: Generador de Tarjetas</h2>
+    <form id="form-tarjeta">
+        <input type="text" id="card-nombre" placeholder="Nombre" required>
+        <input type="text" id="card-desc" placeholder="Descripción" required>
+        <button type="submit" id="btn-crear">Crear Tarjeta</button>
+    </form>
+
+    <button id="btn-eliminar-ultima">Eliminar Última Tarjeta</button>
+
+    <div id="contenedor-tarjetas">
+        </div>
+    
+    <script src="script.js"></script> 
+</body>
+</html>

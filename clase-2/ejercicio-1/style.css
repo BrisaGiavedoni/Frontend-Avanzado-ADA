@@ -1,0 +1,29 @@
+body {
+  text-align: center;
+  font-family: 'Arial';
+  background-color: #f5f5f5;
+  transition: all 0.5s;
+}
+
+.colorido {
+  color: #8a2be2;
+  text-shadow: 0 0 10px #b96fff;
+}
+
+.oculto {
+  display: none;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  background: #000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+
+button:hover {
+  background: #8a2be2;
+}
