@@ -1,0 +1,66 @@
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1 {
+    color: #0056b3;
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 5px;
+}
+
+.container {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.container:hover {
+    transform: translateY(-2px);
+}
+
+/* Estilos para Actividad 3: Lista */
+#listaColores {
+    list-style: none;
+    padding: 0;
+}
+
+#listaColores li {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    /* Color inicial normal */
+    background-color: #e9ecef; 
+}
+
+/* Estilos para Actividad 5: Burbujeo */
+.event-box {
+    padding: 15px;
+    margin: 10px;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.abuelo {
+    background-color: #4a4e69;
+}
+
+.padre {
+    background-color: #9a8c98;
+}
+
+.hijo {
+    background-color: #c9ada7;
+}
+
+/* Estilos para resultados */
+.resultado {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #007bff;
+}

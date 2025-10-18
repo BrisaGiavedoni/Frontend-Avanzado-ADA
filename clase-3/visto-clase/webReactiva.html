@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>La Web Reactiva ⚡</title>
+  <style>
+    body {
+      background-color: #0f0f0f;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      padding: 40px;
+      transition: background-color 0.5s;
+    }
+    button {
+      background: linear-gradient(45deg, #7b2ff7, #f107a3);
+      border: none;
+      padding: 15px 30px;
+      border-radius: 12px;
+      font-size: 18px;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+    #mensaje {
+      margin-top: 40px;
+      font-size: 22px;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+    .visible { opacity: 1; }
+  </style>
+</head>
+<body>
+  <h1>⚙️ La Web Reactiva — Despierta al Sistema</h1>
+  <button id="botonClick">Activar sistema</button>
+  <div id="mensaje">✨ Sistema iniciado. Esperando interacción...</div>
+
+  <script>
+    // 1️⃣ evento con .onclick (forma clásica)
+    const boton = document.getElementById('botonClick');
+    boton.onclick = function() {
+      document.body.style.backgroundColor = "#1a0033";
+      document.getElementById('mensaje').classList.add('visible');
+      document.getElementById('mensaje').textContent = "🟣 Sistema ACTIVADO por evento ONCLICK";
+      new Audio('https://assets.mixkit.co/sfx/preview/mixkit-game-click-1114.mp3').play();
+    };
+
+    // 2️⃣ evento con addEventListener (forma moderna)
+    window.addEventListener('keydown', function(e) {
+      if (e.key === ' ') {
+        document.body.style.backgroundColor = "#002a44";
+        document.getElementById('mensaje').textContent = "🔵 Evento KEYDOWN detectado (tecla ESPACIO)";
+      }
+    });
+
+    // 3️⃣ evento preventDefault() en enlace
+    const link = document.createElement('a');
+    link.href = "https://google.com";
+    link.textContent = "👉 Ir a Google";
+    link.style.display = "block";
+    link.style.marginTop = "30px";
+    document.body.appendChild(link);
+
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+      document.getElementById('mensaje').textContent = "🚫 preventDefault() evitó salir del sitio";
+      new Audio('https://assets.mixkit.co/sfx/preview/mixkit-retro-arcade-casino-notification-211.mp3').play();
+    });
+
+    // 4️⃣ stopPropagation() con elementos anidados
+    const abuelo = document.createElement('div');
+    const padre = document.createElement('div');
+    const hijo = document.createElement('div');
+
+    abuelo.textContent = "👴 Abuelo";
+    padre.textContent = "👨 Padre";
+    hijo.textContent = "🧒 Hijo";
+
+    abuelo.style.marginTop = "40px";
+    abuelo.style.padding = "20px";
+    abuelo.style.background = "#222";
+
+    padre.style.padding = "20px";
+    padre.style.background = "#333";
+
+    hijo.style.padding = "20px";
+    hijo.style.background = "#555";
+
+    abuelo.appendChild(padre);
+    padre.appendChild(hijo);
+    document.body.appendChild(abuelo);
+
+    abuelo.addEventListener("click", () => alert("Abuelo reacciona 🧓"));
+    padre.addEventListener("click", () => alert("Padre reacciona 👨"));
+    hijo.addEventListener("click", (event) => {
+      event.stopPropagation();
+      alert("Hijo reacciona 🧒 (stopPropagation activo)");
+    });
+  </script>
+</body>
+</html>

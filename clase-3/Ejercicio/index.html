@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 3: Manejo de Eventos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Actividades Clase 3: Eventos</h1>
+
+    <div class="container" id="actividad1">
+        <h2>1. Clics en la Página (Ver Consola)</h2>
+        <p>Haz clic en cualquier parte de esta sección para ver qué elemento fue clickeado.</p>
+        <button id="btnEspecial">Botón de Prueba</button>
+    </div>
+
+    <div class="container" id="actividad2">
+        <h2>2. Comportamiento por Defecto (preventDefault)</h2>
+        <a href="https://www.google.com" id="enlaceBloqueado">Haz clic aquí (URL Externa)</a>
+        <p class="resultado" id="resultado2"></p>
+    </div>
+
+    <div class="container" id="actividad3">
+        <h2>3. Eventos del Mouse (mouseover/mouseout)</h2>
+        <ul id="listaColores">
+            <li>Elemento Lista Uno</li>
+            <li>Elemento Lista Dos</li>
+            <li>Elemento Lista Tres</li>
+        </ul>
+    </div>
+
+    <div class="container" id="actividad4">
+        <h2>4. Detección de Teclas (keydown)</h2>
+        <input type="text" id="campoTexto" placeholder="Escribe aquí y mira la consola">
+        <p class="resultado" id="resultado4">Presiona 'Enter' en el campo para un mensaje especial.</p>
+    </div>
+
+    <div class="container" id="actividad5">
+        <h2>5. Propagación de Eventos</h2>
+        <div id="abuelo" class="event-box abuelo">Abuelo
+            <div id="padre" class="event-box padre">Padre
+                <div id="hijo" class="event-box hijo">Haz clic aquí (Hijo)</div>
+            </div>
+        </div>
+        <p class="resultado" id="resultado5">Abre la Consola (F12) y haz clic en "Hijo".</p>
+    </div>
+
+    <div class="container" id="desafio">
+        <h2>🔥 Desafío Extra: Secuencia Secreta</h2>
+        <p class="resultado" id="mensajeDesafio">Secuencia: Arriba, Arriba, Abajo, Abajo, Izq, Der, 'a', 'b', Enter</p>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
