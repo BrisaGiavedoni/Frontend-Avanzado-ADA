@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selección de Opciones</title>
+    <link rel="stylesheet" href="form.css"> 
+</head>
+<body>
+    <h1>Selección de Opciones</h1>
+
+    <form id="opcionesForm">
+        <h2>1. Elige tu Color Favorito (Solo uno):</h2>
+        <div>
+            <input type="radio" id="rojo" name="color" value="Rojo" required>
+            <label for="rojo">Rojo</label>
+            
+            <input type="radio" id="verde" name="color" value="Verde">
+            <label for="verde">Verde</label>
+            
+            <input type="radio" id="azul" name="color" value="Azul">
+            <label for="azul">Azul</label>
+        </div>
+
+        <hr>
+
+        <h2>2. Selecciona tus Pasatiempos (Uno o más):</h2>
+        <div>
+            <input type="checkbox" id="leer" name="pasatiempo" value="Leer">
+            <label for="leer">Leer</label>
+            
+            <input type="checkbox" id="jugar" name="pasatiempo" value="Jugar Videojuegos">
+            <label for="jugar">Jugar Videojuegos</label>
+            
+            <input type="checkbox" id="cocinar" name="pasatiempo" value="Cocinar">
+            <label for="cocinar">Cocinar</label>
+        </div>
+
+        <hr>
+
+        <button type="submit" id="mostrarBtn">Mostrar Selección</button>
+    </form>
+
+    <div id="resultado">
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

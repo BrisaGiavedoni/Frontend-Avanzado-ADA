@@ -1,0 +1,99 @@
+/* Estilos generales para el cuerpo de la página */
+body {
+    font-family: 'Verdana', sans-serif;
+    background-color: #e9ecef;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #343a40;
+}
+
+/* Estilos para el formulario */
+#userForm {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para las etiquetas */
+label {
+    display: inline-block;
+    width: 80px; /* Alineación de labels */
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/* Estilo para los campos de entrada (inputs) */
+input[type="text"],
+input[type="number"] {
+    width: calc(100% - 90px); /* Ajusta el ancho restando el espacio del label */
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+/* Estilo para el botón de enviar */
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para la línea divisoria */
+hr {
+    width: 100%;
+    max-width: 350px;
+    border: 0;
+    border-top: 1px solid #adb5bd;
+    margin: 20px 0;
+}
+
+/* Estilo para el encabezado de resultados */
+h2 {
+    color: #212529;
+    margin-bottom: 15px;
+}
+
+/* Estilo para la caja de resultados */
+#resultado {
+    background-color: #e2e3e5;
+    border: 1px solid #dae0e5;
+    padding: 15px;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 350px;
+    min-height: 50px; /* Asegura que la caja sea visible incluso vacía */
+}
+
+/* Estilo para el texto dentro de la caja de resultados */
+#resultado p {
+    margin: 5px 0;
+    line-height: 1.5;
+}

@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 30px;
+}
+
+#opcionesForm {
+    max-width: 500px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+h2 {
+    color: #007bff;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 15px;
+}
+
+label {
+    margin-right: 15px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #1e7e34;
+}
+
+#resultado {
+    margin-top: 30px;
+    padding: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background-color: #e9ecef;
+}
+
+.advertencia {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+#resultado ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}

@@ -1,0 +1,22 @@
+#mensajeBienvenida {
+    color: #007bff;
+    font-size: 2.5em; /* Mensaje grande y prominente */
+    margin-top: 0;
+    margin-bottom: 30px;
+    word-wrap: break-word; /* Para nombres largos */
+}
+
+a {
+    color: #6c757d; /* Gris sutil */
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 8px 15px;
+    border: 1px solid #6c757d;
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+
+a:hover {
+    color: #ffffff;
+    background-color: #6c757d;
+}

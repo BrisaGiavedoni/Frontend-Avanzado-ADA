@@ -1,0 +1,67 @@
+/* Estilos generales para el cuerpo de la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    padding: 20px;
+    color: #333;
+}
+
+/* Estilo para el encabezado */
+h1 {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para el área de texto */
+#comentario {
+    width: 100%;
+    max-width: 600px; /* Limita el ancho en pantallas grandes */
+    height: 150px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Asegura que padding y border se incluyan en el ancho */
+    resize: vertical; /* Permite redimensionar solo verticalmente */
+    font-size: 16px;
+}
+
+#comentario:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none; /* Elimina el contorno predeterminado del navegador */
+}
+
+/* Estilo para el contenedor del contador */
+#contador {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Estilo para el número de caracteres restantes */
+#restantes {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Estilo de alerta (añadido por JavaScript cuando restantes === 0) */
+#restantes.alerta {
+    color: #dc3545; /* Color rojo vibrante para la alerta */
+    font-size: 16px;
+    animation: pulse 1s infinite alternate; /* Animación de pulsación */
+}
+
+/* Definición de la animación de pulsación */
+@keyframes pulse {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
