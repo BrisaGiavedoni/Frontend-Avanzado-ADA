@@ -1,0 +1,61 @@
+/* styles_toggle.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    /* Aplicar transición para una animación suave entre temas */
+    transition: background-color 0.5s, color 0.5s; 
+}
+
+.content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ==================================== */
+/* MODO CLARO (Estado Inicial) */
+/* ==================================== */
+.light-mode {
+    background-color: #ffffff; /* Fondo claro */
+    color: #333333; /* Texto oscuro */
+}
+
+/* Estilos específicos para texto en modo claro */
+.light-mode h1 {
+    color: #007bff;
+}
+
+/* ==================================== */
+/* MODO OSCURO */
+/* ==================================== */
+.dark-mode {
+    background-color: #1a1a2e; /* Fondo oscuro/negro */
+    color: #e6e6fa; /* Texto claro/lavanda */
+}
+
+/* Estilos específicos para texto en modo oscuro */
+.dark-mode h1 {
+    color: #8c82ff; /* Color brillante para contraste */
+}
+
+/* Estilos del botón */
+.toggle-btn {
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-bottom: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estilo del botón según el modo */
+.light-mode .toggle-btn {
+    background-color: #f0ad4e; /* Naranja en modo claro */
+    color: #333;
+}
+
+.dark-mode .toggle-btn {
+    background-color: #33405b; /* Gris oscuro en modo oscuro */
+    color: #fff;
+}

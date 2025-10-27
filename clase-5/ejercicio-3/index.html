@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal de Confirmación</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+
+    <button id="openModalBtn" class="action-btn">
+        Abrir Modal de Confirmación
+    </button>
+
+    <div class="page-content">
+        <h2>Contenido de la Página</h2>
+        <p>Este es el contenido principal que se oscurece cuando el modal está activo.</p>
+    </div>
+
+    <div id="myModal" class="modal-overlay">
+        
+        <div class="modal-content">
+            <span class="close-btn" id="closeModalBtn">&times;</span>
+            
+            <h3>Confirmación de Acción</h3>
+            <p>¿Estás seguro de que deseas completar esta acción?</p>
+            
+            <div class="modal-actions">
+                <button class="action-btn confirm-btn">Sí, Aceptar</button>
+                <button class="action-btn cancel-btn" id="cancelModalBtn">Cancelar</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

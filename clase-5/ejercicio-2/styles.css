@@ -1,0 +1,69 @@
+/* styles_sidebar.css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estilos del Sidebar */
+.sidebar {
+    height: 100%; /* Altura completa desde arriba hasta abajo */
+    width: 0; /* 🚩 PASO CLAVE: Inicialmente oculto */
+    position: fixed; /* 🚩 Fijo en la pantalla */
+    z-index: 10; /* Asegura que esté encima de otros elementos */
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden; /* Oculta el scroll horizontal */
+    padding-top: 60px;
+    
+    /* 🚩 PASO CLAVE: Animación suave */
+    transition: 0.5s; 
+}
+
+/* Estilos de los enlaces */
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+    background-color: #333;
+}
+
+/* Estilo para el botón de cerrar (la 'x') */
+.sidebar .close-btn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Estilo del botón para abrir el sidebar */
+.open-btn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 5;
+    border-radius: 4px;
+}
+
+.open-btn:hover {
+    background-color: #555;
+}
+
+/* Estilos para el contenido principal (opcional) */
+#main-content {
+    padding: 20px;
+    transition: margin-left 0.5s;
+}

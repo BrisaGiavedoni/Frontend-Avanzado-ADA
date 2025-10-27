@@ -1,0 +1,53 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    padding: 20px;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item {
+    margin-bottom: 10px;
+}
+
+.faq-pregunta {
+    /* Estilos del botón */
+    background-color: #007bff;
+    color: white;
+    padding: 12px 15px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    font-size: 1.1em;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.faq-pregunta:hover {
+    background-color: #0056b3;
+}
+
+/* 🚩 REGLA CLAVE: Oculta la respuesta por defecto */
+.faq-respuesta {
+    display: none; /* Esto es lo que JS manipulará */
+    padding: 15px;
+    background-color: #e9ecef;
+    border-left: 5px solid #007bff;
+    border-radius: 0 0 4px 4px;
+    margin-top: -5px; /* Para que se junte con el botón */
+}
+
+.faq-respuesta p {
+    margin: 0;
+}

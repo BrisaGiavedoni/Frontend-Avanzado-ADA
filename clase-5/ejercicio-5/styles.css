@@ -1,0 +1,53 @@
+/* styles_accordion.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    padding: 20px;
+}
+
+.accordion-container {
+    max-width: 700px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-item {
+    border-bottom: 1px solid #ddd;
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+/* Título de la sección (Botón) */
+.accordion-title {
+    background-color: #337ab7;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+.accordion-title:hover {
+    background-color: #286090;
+}
+
+/* 🚩 Paso Clave: Contenido oculto y estilo para animación */
+.accordion-content {
+    /* Inicialmente display: none (será cambiado por JS) */
+    display: none; 
+    padding: 0 18px;
+    background-color: #f9f9f9;
+    overflow: hidden; /* Importante para la animación */
+}
+
+.accordion-content p {
+    padding: 10px 0;
+}
