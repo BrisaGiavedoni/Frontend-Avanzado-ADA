@@ -1,0 +1,222 @@
+/* =======================================================================
+    RESETEO BÁSICO Y ESTILOS GLOBALES
+    ======================================================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f4f9; /* Fondo claro */
+    color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* Espacio entre secciones */
+    min-height: 100vh;
+}
+
+/* =======================================================================
+    ESTILOS DE LOS FILTROS RÁPIDOS (NUEVO)
+    ======================================================================= */
+.filtros-rapidos {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Espacio entre enlaces de filtro */
+    padding: 10px 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.filtro-btn {
+    text-decoration: none;
+    color: #007bff; /* Color primario */
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.filtro-btn:hover {
+    background-color: #e9ecef; /* Un gris muy claro al pasar el ratón */
+    color: #0056b3;
+}
+
+/* Estilo para el filtro que está ACTIVO (seleccionado por la URL) */
+.filtro-btn.activo {
+    background-color: #007bff; /* Fondo del color primario */
+    color: white; /* Texto blanco para contraste */
+    pointer-events: none; /* Deshabilita el clic, ya que estás en esa vista */
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.3);
+}
+
+/* =======================================================================
+    ESTILOS DEL FORMULARIO DE AGREGAR TAREA
+    ======================================================================= */
+#formulario {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#tarea {
+    flex-grow: 1; /* Ocupa el espacio restante */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#categoria {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #eee;
+    font-size: 16px;
+}
+
+/* Estilo general para todos los botones */
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s, opacity 0.2s;
+    white-space: nowrap; /* Evita que el texto del botón se rompa */
+}
+
+#formulario button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+}
+
+#formulario button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* =======================================================================
+    ESTILOS DE LA LISTA DE TAREAS
+    ======================================================================= */
+#lista-tareas {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Estilo para cada tarea individual (el elemento <article>) */
+#lista-tareas article {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid #007bff; /* Indicador de tarea pendiente (Azul) */
+    transition: all 0.3s ease;
+}
+
+#lista-tareas article p {
+    flex-grow: 1;
+    margin-right: 15px;
+    word-break: break-word; /* Evita desbordamiento */
+}
+
+/* Clase añadida por JS para tareas completadas */
+.tarea-completada {
+    background-color: #e6ffe6 !important; /* Fondo más claro y verde pálido */
+    border-left: 5px solid #28a745 !important; /* Indicador verde */
+    opacity: 0.85;
+}
+
+.tarea-completada p {
+    text-decoration: line-through; /* Tachado */
+    color: #6c757d;
+}
+
+.acciones {
+    display: flex;
+    gap: 5px;
+}
+
+/* Botones de acción dentro de la tarea */
+.btn-completar {
+    background-color: #28a745; /* Verde */
+    color: white;
+    font-size: 14px;
+}
+
+.btn-completar:hover {
+    background-color: #1e7e34;
+}
+
+.btn-eliminar {
+    background-color: #dc3545; /* Rojo */
+    color: white;
+    font-size: 14px;
+}
+
+.btn-eliminar:hover {
+    background-color: #c82333;
+}
+
+
+/* =======================================================================
+    ESTILOS DEL BOTÓN BORRAR TODO
+    ======================================================================= */
+#borrar-todo {
+    background-color: #6c757d; /* Gris oscuro */
+    color: white;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 10px;
+}
+
+#borrar-todo:hover {
+    background-color: #5a6268;
+}
+
+/* =======================================================================
+    RESPONSIVE BÁSICO
+    ======================================================================= */
+@media (max-width: 500px) {
+    #formulario {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #categoria,
+    #formulario button[type="submit"] {
+        width: 100%; /* Ocupan todo el ancho en pantallas pequeñas */
+    }
+    
+    .filtros-rapidos { /* En pantallas pequeñas, apilamos los filtros */
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    #lista-tareas article {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    #lista-tareas article p {
+        margin-right: 0;
+    }
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Integrador: To-Do App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <nav class="filtros-rapidos">
+        <a href="index.html" class="filtro-btn">Todas</a> |
+        <a href="index.html?categoria=Trabajo" class="filtro-btn">Trabajo</a> |
+        <a href="index.html?categoria=Estudio" class="filtro-btn">Estudio</a> |
+        <a href="index.html?categoria=Personal" class="filtro-btn">Personal</a>
+    </nav>
+    <form id="formulario">
+        <input type="text" id="tarea" placeholder="Escribe una tarea">
+        <select id="categoria">
+            <option value="Trabajo">Trabajo</option>
+            <option value="Estudio">Estudio</option>
+            <option value="Personal">Personal</option>
+        </select>
+        <button type="submit">Agregar</button>
+    </form>
+
+    <div id="lista-tareas"></div>
+    <button id="borrar-todo">Borrar todas las tareas</button>
+</body>
+
+<script src="js/script.js"></script>
+
+</html>
