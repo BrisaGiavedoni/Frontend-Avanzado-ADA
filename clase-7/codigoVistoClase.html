@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechStart Landing</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"
+    />
+    <style>
+      .card:hover {
+        transform: scale(1.05);
+        transition: 0.3s ease-in-out;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar is-dark">
+      <div class="navbar-brand">
+        <a class="navbar-item has-text-weight-bold">💻 TechStart</a>
+      </div>
+      <div class="navbar-start is-flex is-justify-content-center is-aling-items-center" style="flex:1">
+        <a class="navbar-item">Inicio</a>
+        <a class="navbar-item">Servicios</a>
+        <a class="navbar-item">Contacto</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero is-primary is-fullheight-with-navbar">
+      <div class="hero-body has-text-centered">
+        <div class="container">
+          <h1 class="title is-1">Construí el futuro con Bulma</h1>
+          <p class="subtitle">Framework CSS moderno, simple y poderoso</p>
+          <button class="button is-light is-large is-rounded">
+            Explorar más
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="section">
+      <div class="container">
+        <h2 class="title has-text-centered">Nuestros Servicios</h2>
+        <div class="columns is-6">
+          <div class="column has-text-centered">
+            <div class="notification is-info">
+              <p class="title is-4">Diseño UX/UI</p>
+              <p>Interfaces centradas en el usuario.</p>
+            </div>
+          </div>
+          <div class="column has-text-centered">
+            <div class="notification is-warning">
+              <p class="title is-4">Desarrollo Web</p>
+              <p>Aplicaciones modernas y escalables.</p>
+            </div>
+          </div>
+          <div class="column has-text-centered"> <!--Los helpers son clases utilitarias rápidas que reemplazan código CSS como text-align: center; o justify-content: center;.-->
+
+    <!-- PORTFOLIO -->
+            <div class="notification is-success">
+              <p class="title is-4">Consultoría Tech</p>
+              <p>Te ayudamos a innovar con tecnología.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+    <section class="section has-background-light">
+      <div class="container">
+        <h2 class="title has-text-centered">Proyectos Destacados</h2>
+        <div class="columns is-multiline">
+          <div class="column is-one-third-desktop is-half-tablet">
+            <div class="card">
+              <div class="card-content has-text-centered">
+                <p class="title">App E-commerce</p>
+                <p>Integración completa con API y diseño responsive.</p>
+              </div>
+            </div>
+          </div>
+          <div class="column is-one-third-desktop is-half-tablet">
+            <div class="card">
+              <div class="card-content has-text-centered">
+                <p class="title">Dashboard Analytics</p>
+                <p>Visualización de datos en tiempo real.</p>
+              </div>
+            </div>
+          </div>
+          <div class="column is-one-third-desktop is-half-tablet">
+            <div class="card">
+              <div class="card-content has-text-centered">
+                <p class="title">Landing Campaign</p>
+                <p>Alta conversión y diseño minimalista.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="hero is-info is-small">
+      <div class="hero-body has-text-centered">
+        <div class="container">
+          <h2 class="title">
+            “Bulma me ayudó a dominar las grillas en una tarde.”
+          </h2>
+          <p class="subtitle">- Desarrolladora Frontend</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="section">
+      <div class="container">
+        <h2 class="title has-text-centered">Contáctanos</h2>
+        <div class="columns is-centered">
+          <div class="column is-half">
+            <div class="box">
+              <form>
+                <div class="field">
+                  <label class="label">Nombre</label>
+                  <div class="control">
+                    <input class="input" type="text" placeholder="Tu nombre" />
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="label">Email</label>
+                  <div class="control">
+                    <input class="input" type="email" placeholder="Tu correo" />
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="label">Mensaje</label>
+                  <div class="control">
+                    <textarea
+                      class="textarea"
+                      placeholder="Escribe tu mensaje"
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="control has-text-centered">
+                  <button class="button is-primary is-rounded">Enviar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer has-text-centered">
+      <p>🚀 TechStart 2025 - Práctica Integradora con Bulma</p>
+    </footer>
+  </body>
+</html>
