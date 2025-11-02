@@ -11,7 +11,7 @@ h2 {
     font-size: 3rem;
 }
 h4 {
-    font-size: 16px;
+    /* Dejado sin cambios, ya que las estrellas son una imagen */
     font-weight: 700;
 }
 
@@ -20,7 +20,6 @@ h4 {
     width: 20rem; 
     height: auto;
     margin: 0; 
-
 }
 
 
@@ -145,13 +144,25 @@ ul {
 }
 
 #lista-cursos .row {
-    margin-bottom:20px;
+    /* ✅ CORRECCIÓN 1: Flexbox para igualar altura de las tarjetas */
+    display: flex;
+    align-items: stretch; 
+    flex-wrap: wrap;
+    
+    margin-bottom: 20px;
 }
 .agregar-carrito {
     margin:10px 0;
+    /* ✅ CORRECCIÓN 4: Alinea el botón al fondo */
+    margin-top: auto;
 }
 
 .card {
+    /* ✅ CORRECCIÓN 2: Configurar la card como contenedor Flex vertical */
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+    
     text-align: center;
     border: 1px solid #e1e1e1;
     background: white;
@@ -161,8 +172,21 @@ ul {
         text-align: left;
     }
 }
-.info-card  {
+.info-card {
+    /* ✅ CORRECCIÓN 3: Ocupa el espacio restante y distribuye el contenido */
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
+    
     padding: 10px 20px;
+}
+
+/* ⭐️ CORRECCIÓN ESTRELLAS: Apuntamos a la imagen dentro de info-card */
+.info-card img[src*="estrellas.png"] {
+    width: 90px; /* Tamaño más pequeño, ajusta este valor si es necesario */
+    height: auto;
+    margin: 5px 0; /* Un poco de margen para separarlas */
 }
 
 .info-card p, 
@@ -196,7 +220,7 @@ ul {
 #logo-footer {
     display: block; 
     /* El mismo tamaño fino que el logo del header */
-    width: 15.8rem;   
+    width: 15.8rem;  
     height: 14.8rem;
     margin: 0; 
 }
