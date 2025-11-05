@@ -1,0 +1,170 @@
+<!DOCTYPE html> <!-- Indica que el documento usa HTML5 -->
+<html lang="es"> <!-- Define el idioma principal del documento -->
+
+<head>
+  <meta charset="UTF-8"> <!-- Codificación UTF-8 para admitir caracteres especiales -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Hace que el sitio sea responsivo en móviles -->
+  <title>Grillas en Bulma — Versión Semántica</title> <!-- Título que aparece en la pestaña del navegador -->
+
+  <!-- Carga el framework Bulma desde un CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+
+  <style>
+    /* ====== Estilo visual personalizado ====== */
+    .color-box {
+      height: 150px; /* Altura fija de cada caja */
+      border-radius: 12px; /* Bordes redondeados */
+      color: white; /* Texto blanco */
+      display: flex; /* Activa flexbox dentro de cada caja */
+      align-items: center; /* Centra verticalmente el texto */
+      justify-content: center; /* Centra horizontalmente el texto */
+      font-size: 1.2rem; /* Tamaño del texto */
+      font-weight: bold; /* Texto en negrita */
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5); /* Sombra para mejorar contraste */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave en hover */
+    }
+
+    /* Efecto al pasar el mouse por encima */
+    .color-box:hover {
+      transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3); /* Agrega sombra externa */
+    }
+  </style>
+</head>
+
+<body class="section"> <!-- Bulma: ".section" añade un espaciado vertical amplio al body -->
+
+  <!-- CABECERA PRINCIPAL -->
+  <header class="container has-text-centered"> <!-- Bulma: ".container" centra horizontalmente y limita el ancho -->
+    <h1 class="title">🎨 Galería de Colores</h1> <!-- Bulma: ".title" da estilo de encabezado grande -->
+    <p class="subtitle">Experimentando con <strong>grillas en Bulma</strong></p> <!-- ".subtitle" agrega un subtítulo con tamaño menor -->
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="container"> <!-- ".container" mantiene márgenes laterales consistentes -->
+
+    <!-- SECCIÓN 1: Galería de colores -->
+    <section aria-labelledby="galeria-titulo"> <!-- "aria-labelledby" mejora accesibilidad -->
+      <h2 id="galeria-titulo" class="title is-4">1️⃣ Grilla Responsiva</h2> <!-- ".title.is-4" define un subtítulo más pequeño -->
+      <p class="mb-4">Ejemplo de cómo Bulma adapta columnas según el tamaño de pantalla.</p> <!-- ".mb-4" aplica margen inferior -->
+
+      <!-- Fila de columnas -->
+      <div class="columns is-multiline is-variable is-6">
+        <!-- ".columns" crea una fila flexbox -->
+        <!-- ".is-multiline" permite que las columnas bajen a una nueva línea si no entran -->
+        <!-- ".is-variable.is-6" agrega espacio (gap) entre las columnas -->
+
+        <!-- Cada artículo representa una "tarjeta de color" -->
+        <article class="column is-one-quarter-desktop is-half-tablet is-full-mobile">
+          <!-- ".column" define una columna -->
+          <!-- ".is-one-quarter-desktop" ocupa 1/4 del ancho en pantallas grandes -->
+          <!-- ".is-half-tablet" ocupa la mitad en tablets -->
+          <!-- ".is-full-mobile" ocupa todo el ancho en celulares -->
+          <div class="color-box has-background-primary">Primary</div> <!-- ".has-background-primary" aplica color azul -->
+        </article>
+
+        <article class="column is-one-quarter-desktop is-half-tablet is-full-mobile">
+          <div class="color-box has-background-link">Link</div> <!-- Color azul celeste -->
+        </article>
+
+        <article class="column is-one-quarter-desktop is-half-tablet is-full-mobile">
+          <div class="color-box has-background-info">Info</div> <!-- Color turquesa -->
+        </article>
+
+        <article class="column is-one-quarter-desktop is-half-tablet is-full-mobile">
+          <div class="color-box has-background-success">Success</div> <!-- Color verde -->
+        </article>
+
+        <article class="column is-one-quarter-desktop is-half-tablet is-full-mobile">
+          <div class="color-box has-background-warning">Warning</div> <!-- Color amarillo -->
+        </article>
+
+        <article class="column is-one-quarter-desktop is-half-tablet is-full-mobile">
+          <div class="color-box has-background-danger">Danger</div> <!-- Color rojo -->
+        </article>
+
+        <article class="column is-one-quarter-desktop is-half-tablet is-full-mobile">
+          <div class="color-box has-background-grey-dark">Dark</div> <!-- Gris oscuro -->
+        </article>
+
+        <article class="column is-one-quarter-desktop is-half-tablet is-full-mobile">
+          <div class="color-box has-background-black">Black</div> <!-- Negro -->
+        </article>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: Ejemplos explicativos -->
+    <section aria-labelledby="ejemplos-titulo" class="mt-6"> <!-- ".mt-6" agrega un margen superior grande -->
+      <h2 id="ejemplos-titulo" class="title is-4">2️⃣ Ejemplos Explicativos</h2>
+
+      <!-- Ejemplo: columnas iguales -->
+      <section class="columns mb-3">
+        <!-- ".columns" genera una fila -->
+        <!-- ".mb-3" agrega margen inferior -->
+        <div class="column has-background-info">A</div> <!-- Cada ".column" ocupa el mismo ancho -->
+        <div class="column has-background-success">B</div>
+        <div class="column has-background-warning">C</div>
+      </section>
+      <!-- Comentario: todas las columnas comparten el ancho por defecto gracias a flexbox -->
+
+      <!-- Ejemplo: columna con ancho fijo -->
+      <section class="columns mb-3">
+        <div class="column is-one-third has-background-primary">1/3</div> <!-- ".is-one-third" ocupa un tercio -->
+        <div class="column has-background-link">Automática</div> <!-- El resto del espacio se reparte -->
+      </section>
+
+      <!-- Ejemplo: columna responsiva -->
+      <aside class="column is-full-mobile is-half-tablet is-one-third-desktop has-background-light has-text-centered mb-3">
+        <!-- ".has-background-light" aplica fondo claro -->
+        <!-- ".has-text-centered" centra el texto -->
+        Contenido adaptable
+      </aside>
+      <!-- Bulma adapta el ancho de la columna según el breakpoint -->
+
+      <!-- Ejemplo: separación variable -->
+      <section class="columns is-variable is-6 mb-3">
+        <!-- ".is-variable.is-6" crea un gap dinámico de tamaño 6 -->
+        <div class="column has-background-danger">A</div>
+        <div class="column has-background-info">B</div>
+      </section>
+
+      <!-- Ejemplo: columna centrada -->
+      <section class="columns is-centered mb-3">
+        <!-- ".is-centered" centra horizontalmente las columnas dentro del contenedor -->
+        <div class="column is-half has-background-warning">Centrada</div> <!-- ".is-half" ocupa la mitad del ancho -->
+      </section>
+    </section>
+
+    <!-- SECCIÓN 3: Ejemplo integrador -->
+    <section aria-labelledby="productos-titulo" class="mt-6">
+      <h2 id="productos-titulo" class="title is-4">3️⃣ Mini Catálogo Responsivo</h2>
+      <p>Grilla de productos usando <code>.box</code> para visualizar contenedores con estilo propio.</p>
+
+      <div class="columns is-multiline">
+        <!-- ".is-multiline" permite que las tarjetas bajen a otra línea -->
+        <article class="column is-one-third-desktop is-half-tablet is-full-mobile">
+          <div class="box has-text-centered">Producto 1</div> <!-- ".box" agrega borde, sombra y padding -->
+        </article>
+
+        <article class="column is-one-third-desktop is-half-tablet is-full-mobile">
+          <div class="box has-text-centered">Producto 2</div>
+        </article>
+
+        <article class="column is-one-third-desktop is-half-tablet is-full-mobile">
+          <div class="box has-text-centered">Producto 3</div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="footer has-text-centered mt-6">
+    <!-- ".footer" agrega fondo gris claro y padding -->
+    <!-- ".has-text-centered" centra el texto -->
+    <!-- ".mt-6" separa el pie del contenido superior -->
+    <p>💡 <strong>Bulma</strong> simplifica las grillas usando Flexbox. Experimentá con los modificadores <code>is-*</code> para adaptar el layout.</p>
+  </footer>
+
+</body>
+</html>
