@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- COMPLETAR: Poner un título descriptivo -->
+  <title>Formulario con Bulma</title>
+
+  <!-- Ya viene Bulma incluido -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+</head>
+
+<body>
+
+  <!-- ✅ 1) COMPLETAR EL NAVBAR -->
+  <nav class="navbar is-primary">
+    <div class="navbar-brand">
+      <!-- Cambiar este texto -->
+      <a class="navbar-item" href="#"> Formulario con Bulma</a>
+
+      <!-- ESTE BOTÓN DEBE ACTIVAR EL MENÚ EN MÓVIL -->
+      <a role="button" class="navbar-burger" data-target="navMenu">
+        <span></span><span></span><span></span>
+      </a>
+    </div>
+
+    <!-- AGREGAR ENLACES DENTRO DE NAVBAR-START -->
+    <div id="navMenu" class="navbar-menu">
+      <div class="navbar-start">
+        <a href="" class="navbar-item">Inicio</a>
+        <a href="" class="navbar-item">Contacto</a>
+        <a href="" class="navbar-item">Sobre mi</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ✅ 2) FORMULARIO -->
+  <section class="section">
+    <div class="container">
+
+      <!-- Cambiar título -->
+      <h1 class="title has-text-centered"> Formulario </h1>
+
+      <form id="formulario" class="box">
+
+        <!-- CAMPO 1 -->
+        <div class="field">
+          <!-- Agregar label -->
+          <label class="label" for="nombre">Nombre</label>
+
+          <!-- Completar placeholder -->
+          <input class="input" id="nombre" type="text" placeholder="Escribe tu nombre">
+          <p class="help is-danger is-hidden">El nombre es obligatorio.</p>
+        </div>
+
+        <!-- CAMPO 2 -->
+        <div class="field">
+          <label class="label" for="email">Email</label>
+          <input class="input" id="email" type="email" placeholder="Escribe tu correo">
+          <p class="help is-danger is-hidden">Por favor, introduce un email válido.</p>
+        </div>
+
+        <!-- CAMPO 3 -->
+        <div class="field">
+          <label class="label" for="mensaje">Mensaje</label>
+          <textarea class="textarea" id="mensaje" placeholder="Escribe tu mensaje"></textarea>
+           <p class="help is-danger is-hidden">El mensaje no puede estar vacío.</p>
+        </div>
+
+        <!-- ✅ 3) COMPLETAR EL BOTÓN -->
+        <button class="button is-primary is-fullwidth" type="submit">
+          Enviar
+        </button>
+
+      </form>
+
+    </div>
+  </section>
+
+
+  <!-- ✅ 4) ACTIVAR EL BOTÓN HAMBURGUESA (DEBEN ENTENDERLO) -->
+  <script>
+    const burger = document.querySelector(".navbar-burger");
+    const menu = document.getElementById("navMenu");
+    const form = document.getElementById("formulario");
+
+    // COMPLETAR: ¿Qué debe suceder al hacer click?
+    burger.addEventListener("click", () => {
+      burger.classList.toggle("is-active")
+      menu.classList.toggle("is-active")
+      // console.log(menu)
+    })
+
+    function toggleError(input, show) {
+      const field = input.closest('.field');
+      const errorMsg = field.querySelector('.help.is-danger');
+      const inputControl = field.querySelector('.input, .textarea');
+      if (show) {
+        errorMsg.classList.remove('is-hidden');
+        inputControl.classList.add('is-danger');
+      } else {
+        errorMsg.classList.add('is-hidden');
+        inputControl.classList.remove('is-danger');
+      }
+    }
+
+    const formulario = document.getElementById('formulario');
+    formulario.addEventListener('submit', (e) => {
+      event.preventDefault();
+      let isValid = true;
+      const name = formulario.querySelector('#nombre');
+      const email = formulario.querySelector('#email');
+      const message = formulario.querySelector('#mensaje');
+      if (name.value.trim() === '') {
+        toggleError(name, true);
+        isValid = false;
+      } else {
+        toggleError(name, false);
+      }
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email.value)) {
+        toggleError(email, true);
+        isValid = false;
+      } else {
+        toggleError(email, false);
+      }
+      if (message.value.trim() === '') {
+        toggleError(message, true);
+        isValid = false;
+      } else {
+        toggleError(message, false);
+      }
+      if (!isValid) {
+        return;
+      }
+      
+      formulario.reset();
+    })
+
+   
+  </script>
+
+</body>
+</html>
+
