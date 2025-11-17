@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar Sesión - Mi Aplicación Web</title>
+    <!-- Bulma -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"
+    />
+    <!-- Font Awesome Icons-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../../styles/login.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-box">
+        <div class="box">
+          <div class="has-text-centered mb-5">
+            <i class="fas fa-user-circle fa-3x has-text-primary"></i>
+            <h1 class="title is-3 mt-3">Iniciar Sesión</h1>
+            <p class="subtitle is-6">Ingresa tus credenciales para continuar</p>
+          </div>
+
+          <!-- Mensaje de error -->
+          <div id="error-message" class="notification is-danger is-hidden">
+            <button class="delete" onclick="closeError()"></button>
+            <p id="error-text"></p>
+          </div>
+
+          <!-- Mensaje de éxito -->
+          <div id="success-message" class="notification is-success is-hidden">
+            <p id="success-text"></p>
+          </div>
+
+          <form id="login-form">
+            <div class="field">
+              <label class="label">Usuario o Email</label>
+              <div class="control has-icons-left">
+                <input
+                  class="input"
+                  type="text"
+                  id="username"
+                  placeholder="Ingresa tu usuario o email"
+                  required
+                />
+                <span class="icon is-small is-left">
+                  <i class="fas fa-user"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Contraseña</label>
+              <div class="control has-icons-left">
+                <input
+                  class="input"
+                  type="password"
+                  id="password"
+                  placeholder="Ingresa tu contraseña"
+                  required
+                />
+                <span class="icon is-small is-left">
+                  <i class="fas fa-lock"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <label class="checkbox">
+                  <input type="checkbox" id="remember" />
+                  Recordarme
+                </label>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <button
+                  class="button is-primary is-fullwidth is-medium"
+                  type="submit"
+                >
+                  <span>Iniciar Sesión</span>
+                  <span class="icon">
+                    <i class="fas fa-sign-in-alt"></i>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <div class="has-text-centered mt-5">
+            <p class="is-size-7">
+              ¿No tienes una cuenta?
+              <a href="#" onclick="showRegister()" class="has-text-primary"
+                >Regístrate aquí</a
+              >
+            </p>
+            <p class="mt-3">
+              <a href="index.html" class="button is-small">
+                <span class="icon">
+                  <i class="fas fa-arrow-left"></i>
+                </span>
+                <span>Volver al inicio</span>
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Formulario de Registro (oculto inicialmente) -->
+        <div id="register-box" class="box is-hidden">
+          <div class="has-text-centered mb-5">
+            <i class="fas fa-user-plus fa-3x has-text-success"></i>
+            <h1 class="title is-3 mt-3">Crear Cuenta</h1>
+            <p class="subtitle is-6">Completa el formulario para registrarte</p>
+          </div>
+
+          <!-- Mensaje de error -->
+          <div
+            id="error-message-register"
+            class="notification is-danger is-hidden"
+          >
+            <button class="delete" onclick="closeErrorRegister()"></button>
+            <p id="error-text-register"></p>
+          </div>
+
+          <!-- Mensaje de éxito -->
+          <div
+            id="success-message-register"
+            class="notification is-success is-hidden"
+          >
+            <p id="success-text-register"></p>
+          </div>
+
+          <form id="register-form">
+            <div class="field">
+              <label class="label">Nombre de Usuario</label>
+              <div class="control has-icons-left">
+                <input
+                  class="input"
+                  type="text"
+                  id="reg-username"
+                  placeholder="Elige un nombre de usuario"
+                  required
+                  minlength="3"
+                />
+                <span class="icon is-small is-left">
+                  <i class="fas fa-user"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control has-icons-left">
+                <input
+                  class="input"
+                  type="email"
+                  id="reg-email"
+                  placeholder="tu@email.com"
+                  required
+                />
+                <span class="icon is-small is-left">
+                  <i class="fas fa-envelope"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Contraseña</label>
+              <div class="control has-icons-left">
+                <input
+                  class="input"
+                  type="password"
+                  id="reg-password"
+                  placeholder="Mínimo 6 caracteres"
+                  required
+                  minlength="6"
+                />
+                <span class="icon is-small is-left">
+                  <i class="fas fa-lock"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Confirmar Contraseña</label>
+              <div class="control has-icons-left">
+                <input
+                  class="input"
+                  type="password"
+                  id="reg-password-confirm"
+                  placeholder="Repite tu contraseña"
+                  required
+                />
+                <span class="icon is-small is-left">
+                  <i class="fas fa-lock"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <button
+                  class="button is-success is-fullwidth is-medium"
+                  type="submit"
+                >
+                  <span>Registrarse</span>
+                  <span class="icon">
+                    <i class="fas fa-user-plus"></i>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <div class="has-text-centered mt-5">
+            <p class="is-size-7">
+              ¿Ya tienes cuenta?
+              <a href="#" onclick="showLogin()" class="has-text-primary"
+                >Inicia sesión aquí</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/js/login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Aplicación Web - Inicio</title>
+    <!-- Bulma -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"
+    />
+    <!-- Font Awesome Icons-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar is-primary is-fixed-top"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="navbar-brand">
+        <a class="navbar-item" href="index.html">
+          <i class="fas fa-home has-text-white"></i>
+          <strong style="margin-left: 10px" class="has-text-white"
+            >Mi App</strong
+          >
+        </a>
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true" class="has-text-white"></span>
+          <span aria-hidden="true" class="has-text-white"></span>
+          <span aria-hidden="true" class="has-text-white"></span>
+          <span aria-hidden="true" class="has-text-white"></span>
+        </a>
+      </div>
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item has-text-white" href="#info-section">
+            Información
+          </a>
+          <a
+            class="navbar-item has-text-white"
+            href="#features-section"
+            id="login-link-nav"
+          >
+            Características
+          </a>
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a
+                class="button is-light"
+                href="pages/login/index.html"
+                id="login-button"
+              >
+                <strong>Iniciar Sesión</strong>
+              </a>
+              <a
+                class="button is-danger is-light is-hidden"
+                href="#"
+                id="logout-button"
+                onclick="handleLogout(event)"
+              >
+                <strong>Cerrar Sesión</strong>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero hero-gradient is-medium">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title is-1 has-text-white">
+            <i class="fas fa-rocket"></i> Bienvenido
+          </h1>
+          <h2 class="subtitle is-4 has-text-white">
+            Aprende desarrollo web de forma práctica y divertida
+          </h2>
+          <a class="button is-large is-light" href="pages/login/index.html">
+            <span>Empezar Ahora</span>
+            <span class="icon">
+              <i class="fas fa-arrow-right"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section" id="features-section">
+      <div class="container">
+        <h2 class="title is-2 has-text-centered mb-6">Características</h2>
+        <div class="columns">
+          <div class="column is-one-third">
+            <div class="card card-hover">
+              <div class="card-content has-text-centered">
+                <div class="icon is-large has-text-primary mb-4">
+                  <i class="fas fa-user-shield fa-3x"></i>
+                </div>
+                <p class="title is-4">Seguro</p>
+                <p class="subtitle is-6">
+                  Autenticación segura usando localStorage
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="column is-one-third">
+            <div class="card card-hover">
+              <div class="card-content has-text-centered">
+                <div class="icon is-large has-text-info mb-4">
+                  <i class="fas fa-mobile-alt fa-3x"></i>
+                </div>
+                <p class="title is-4">Responsive</p>
+                <p class="subtitle is-6">
+                  Diseño adaptable a todos los dispositivos
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="column is-one-third">
+            <div class="card card-hover">
+              <div class="card-content has-text-centered">
+                <div class="icon is-large has-text-success mb-4">
+                  <i class="fas fa-graduation-cap fa-3x"></i>
+                </div>
+                <p class="title is-4">Educativo</p>
+                <p class="subtitle is-6">
+                  Perfecto para aprender desarrollo web
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="section" id="info-section">
+      <div class="container">
+        <div class="columns is-vcentered">
+          <div class="column is-half">
+            <h2 class="title is-3">Sobre este Proyecto</h2>
+            <p class="subtitle is-5 has-text-grey">
+              Este es un proyecto educativo diseñado para estudiantes que están
+              aprendiendo desarrollo web.
+            </p>
+            <p class="content">
+              Utiliza tecnologías modernas como HTML5, Bulma CSS Framework y
+              JavaScript vanilla. El sistema de autenticación simula una base de
+              datos real usando localStorage del navegador.
+            </p>
+            <div class="tags">
+              <span class="tag is-primary">HTML5</span>
+              <span class="tag is-info">Bulma CSS</span>
+              <span class="tag is-success">JavaScript</span>
+              <span class="tag is-warning">localStorage</span>
+            </div>
+          </div>
+          <div class="column is-half has-text-centered">
+            <div class="box">
+              <i class="fas fa-code fa-5x has-text-primary"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p><strong>Mi Aplicación Web</strong> - Proyecto Educativo</p>
+        <p>
+          <small>Desarrollado por estudiantes en proceso de aprendizaje</small>
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

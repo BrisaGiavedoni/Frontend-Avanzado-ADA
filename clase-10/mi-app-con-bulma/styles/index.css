@@ -1,0 +1,18 @@
+.hero-gradient {
+  background-image: linear-gradient(
+    to right top,
+    #0f1114,
+    #042531,
+    #003c42,
+    #00523f,
+    #1d6629
+  );
+}
+
+.card-hover {
+  transition: transform 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+}
