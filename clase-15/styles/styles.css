@@ -1,0 +1,273 @@
+/* Variables y Reset */
+:root {
+  /* Definición de la unidad base de diseño */
+  --base-font-size: 1rem; /* 16px por defecto */
+
+  --brand-color: #5003df; /* Púrpura/Azul vibrante */
+  --brand-hover: #37029b;
+  --bg-card: white;
+  --text-main: #6b49bb; /* Color usado para títulos h2 fuera de las cards */
+  --card-text-main: #230537; /* Púrpura muy oscuro para alto contraste en la card */
+  --text-secondary: #7f8c8d;
+  --border-color: #ecf0f1;
+  --success-color: #650c99;
+  --danger-color: #9e030a;
+
+  /* Sombra más moderna y compleja (Layered Shadow) */
+  --shadow-modern: 0 0.5rem 1rem rgba(0, 0, 0, 0.1),
+    /* Sombra principal más fuerte */ 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05); /* Sombra secundaria para profundidad */
+
+  --border-radius-lg: 0.875rem; /* 14px en rem */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  /* Fondo con gradiente */
+  background-image: linear-gradient(
+    to right top,
+    #230537,
+    #331847,
+    #432a58,
+    #543c69,
+    #654f7a
+  );
+  color: var(--text-main);
+  line-height: 1.5;
+  padding-top: 3.75rem; /* 60px en rem para el Navbar fijo */
+  min-height: 100vh; /* Cubre todo el viewport vertical */
+}
+
+a {
+  text-decoration: none;
+  color: var(--brand-color);
+}
+
+/* 1. Header y Navbar (Fijo y Adaptado al HTML de MeeGram) */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-card);
+  border-bottom: 0.0625rem solid var(--border-color);
+  padding: 0.625rem 1.25rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Cubre todo el ancho del viewport */
+  z-index: 1000;
+}
+
+.nav-brand {
+  color: var(--brand-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.25rem;
+}
+
+.nav-links a {
+  color: var(
+    --card-text-main
+  ); /* Usar el color oscuro para el texto del navbar */
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--brand-color);
+}
+
+/* 2. Layout Principal (Centrado) */
+.content-wrapper {
+  max-width: 42.5rem; /* 680px en rem */
+  margin: 1.25rem auto;
+  padding: 0 0.9375rem;
+}
+
+/* Títulos de Sección (Ajustados al fondo oscuro) */
+h2 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--bg-card); /* Blanco para contrastar con el fondo oscuro */
+  margin-top: 1.875rem;
+  margin-bottom: 1.25rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+hr {
+  border: 0;
+  height: 0.0625rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 1.875rem 0;
+}
+
+/* ======================================================= */
+/* ESTILOS DE CARD/POST (MODERNIZADOS) */
+/* ======================================================= */
+
+.card,
+.post-item {
+  background: var(--bg-card);
+  padding: 1.5625rem; /* 25px */
+  border-radius: var(--border-radius-lg);
+
+  /* Borde sutil que le da un toque 'Glassy' contra el fondo oscuro */
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  /* Sombra moderna */
+  box-shadow: var(--shadow-modern);
+
+  margin-bottom: 1.5rem; /* Más espacio entre tarjetas */
+  transition: all 0.3s ease-in-out;
+  list-style: none;
+}
+
+.card:hover,
+.post-item:hover {
+  /* Efecto de 'lift' al pasar el mouse */
+  transform: translateY(-0.1875rem); /* 3px de levantamiento */
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.15); /* Sombra más fuerte al hacer hover */
+}
+
+/* Inputs de Publicación */
+#create-post-form input[type="text"],
+#create-post-form textarea {
+  width: 100%;
+  padding: 0.75rem 0.9375rem;
+  border: 0.0625rem solid var(--border-color);
+  border-radius: 0.5rem;
+  margin-bottom: 0.625rem;
+  font-family: inherit;
+  font-size: 0.9375rem;
+}
+
+/* Botones Principales */
+button {
+  padding: 0.625rem 1.125rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s, transform 0.1s;
+  margin-top: 0.625rem;
+}
+
+/* Botón POST */
+#create-post-form button[type="submit"] {
+  background-color: var(--brand-color);
+  color: white;
+  width: 100%;
+  font-size: 1.0625rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.15);
+}
+
+/* Botón de Carga GET */
+#load-posts-btn {
+  background-color: var(--success-color);
+  color: white;
+  padding: 0.625rem 1.25rem;
+}
+
+/* ------------------------------------------------ */
+/* Tipografía dentro de los Posts */
+/* ------------------------------------------------ */
+
+.post-item h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--card-text-main); /* Usar el color oscuro para el encabezado */
+  margin-bottom: 0.5rem;
+  
+}
+
+.post-item p {
+  font-size: 1rem;
+  color: var(
+    --card-text-main
+  ); /* Usar el color oscuro para el cuerpo del texto */
+  margin-bottom: 0.9375rem;
+  
+}
+
+/* Acciones y Metadatos */
+.post-actions {
+  border-top: 0.0625rem solid var(--border-color);
+  padding-top: 0.75rem; /* 12px */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-actions small {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+}
+
+/* Botones CRUD Directos (Más integrados visualmente) */
+.btn-action {
+  font-size: 0.75rem;
+  padding: 0.4375rem 0.75rem;
+  margin-left: 0.5rem;
+  margin-top: 0;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+}
+.btn-edit {
+  background-color: var(--brand-color); /* Usar el color principal */
+  color: white;
+}
+.btn-delete {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+/* Mensajes de Estado */
+.status-message {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  margin-top: 0.9375rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  display: inline-block;
+  border: 0.0625rem solid transparent;
+}
+
+.success {
+  background-color: #d4edda;
+  color: #155724;
+  border-color: #c3e6cb;
+}
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-color: #f5c6cb;
+}
+
+/* Media Queries para Responsive Design */
+@media (max-width: 768px) {
+  .content-wrapper {
+    max-width: 95vw;
+  }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 0.5rem;
+  }
+  .nav-links {
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+  }
+  body {
+    padding-top: 5rem;
+  }
+}

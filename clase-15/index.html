@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+   
+  <head>
+       
+    <meta charset="UTF-8" />
+       
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+       
+    <title>Ejercitacion</title>
+     
+  </head>
+   
+  <body>
+       
+    <header>    
+        <nav class="navbar">
+            <div class="nav-brand">MeeGram</div>
+            <ul class="nav-links">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Perfil</a></li>
+            <li><a href="#">Configuración</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content-wrapper">
+      <h2>¿Qué estás pensando?</h2>
+      <form id="create-post-form" class="card">
+        <label for="new-title" style="display: none">Título:</label>        
+        <input
+          type="text"
+          id="new-title"
+          placeholder="Título corto o resumen..."
+          required
+        />
+                <label for="new-body" style="display: none">Contenido:</label>  
+             
+        <textarea
+          id="new-body"
+          placeholder="Escribe el contenido de tu post aquí..."
+          required
+        ></textarea>
+                <button type="submit">Publicar (POST)</button>        
+        <p id="post-status" class="status-message"></p>
+      </form>
+
+      <hr />
+
+      <h2>Tu Feed Principal</h2>
+
+      <div style="margin-bottom: 15px">
+        <button id="load-posts-btn" class="btn-cargar">
+          Mostrar Posts (GET)
+        </button>
+        <p id="get-status" class="status-message"></p>
+      </div>
+
+      <ul id="posts-container">
+        <p style="color: var(--text-secondary)">
+          Presiona "Mostrar Posts" para cargar la actividad.
+        </p>
+      </ul>
+         
+    </div>
+               
+    <script src="./js/script.js"></script>
+                 
+  </body>
+</html>
