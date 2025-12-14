@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 4: Paginación y Filtrado (PokeAPI)</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; background-color: #f0f0f5; }
+        .container { max-width: 900px; margin: 0 auto; background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
+        h1 { color: #cc0000; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .controls { margin-bottom: 20px; padding: 15px; background: #f9f9f9; border-radius: 5px; display: flex; flex-wrap: wrap; align-items: center; gap: 15px; }
+        label, select, input, button { padding: 8px; border-radius: 5px; border: 1px solid #ccc; }
+        button { background-color: #ffde00; color: #333; border: none; cursor: pointer; font-weight: bold; }
+        button:hover { background-color: #f0c000; }
+        #resultsList { list-style: none; padding: 0; margin-top: 20px; }
+        #resultsList li { background: #ffe6e6; padding: 10px; margin-bottom: 5px; border-left: 5px solid #cc0000; border-radius: 5px; }
+        .info { font-style: italic; color: #666; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Actividad 4: Paginación y Filtrado Múltiple (PokeAPI)</h1>
+        <p class="info">API: PokeAPI. Combina **Paginación** (`limit`, `offset`) con **Filtrado por Tipo** (`typeId`).</p>
+
+        <div class="controls">
+            <label for="typeIdInput">Filtrar por Tipo (ID):</label>
+            <select id="typeIdInput">
+                <option value="1">Normal (ID 1)</option>
+                <option value="3" selected>Vuelo (ID 3)</option>
+                <option value="10">Fuego (ID 10)</option>
+                <option value="11">Agua (ID 11)</option>
+            </select>
+            
+            <label for="limitInput">Cantidad a Mostrar (Limit):</label>
+            <input type="number" id="limitInput" value="10" min="1" max="100" placeholder="Límite">
+            
+            <label for="offsetInput">Inicio (Offset):</label>
+            <input type="number" id="offsetInput" value="0" min="0" placeholder="Inicio">
+            
+            <button id="searchButton">Aplicar Filtros</button>
+        </div>
+
+        <h2>Pokémon Filtrados y Paginados:</h2>
+        <ul id="resultsList">
+            <li>Ajusta los parámetros y haz clic en Aplicar Filtros.</li>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

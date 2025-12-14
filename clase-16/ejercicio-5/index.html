@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 5: Paginado Front End (PokeAPI)</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; background-color: #f0f0f5; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
+        h1 { color: #cc0000; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        button { padding: 10px 20px; background-color: #ffde00; color: #333; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: background-color 0.3s; }
+        button:disabled { background-color: #ccc; cursor: not-allowed; }
+        button:hover:not(:disabled) { background-color: #f0c000; }
+        #pageInfo { font-size: 1.1em; font-weight: bold; color: #cc0000; }
+        #pokemonList { list-style: none; padding: 0; margin-top: 20px; }
+        #pokemonList li { background: #ffe6e6; padding: 15px; margin-bottom: 8px; border-left: 5px solid #cc0000; border-radius: 5px; }
+        .info { font-style: italic; color: #666; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Actividad 5: Simulación de Paginado en Front End</h1>
+        <p class="info">Descargando la colección de 100 Pokémon de PokeAPI una sola vez (`?limit=100`). La simulación de paginado (mostrar 10 elementos por bloque) se realiza en el cliente con JavaScript (`.slice()`).</p>
+
+        <div class="controls">
+            <button id="prevButton" disabled>Anterior</button>
+            <span id="pageInfo">Cargando...</span>
+            <button id="nextButton" disabled>Siguiente</button>
+        </div>
+
+        <h2>Pokémon Listados (Bloque de 10):</h2>
+        <ul id="pokemonList">
+            <li>Cargando colección completa...</li>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
